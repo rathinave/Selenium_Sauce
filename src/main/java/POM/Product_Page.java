@@ -1,6 +1,7 @@
 package POM;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,11 +21,6 @@ public class Product_Page {
 	static 
 	WebElement product_name;
 	
-	@FindBy(xpath = "//a[@class='shopping_cart_link']")
-	static 
-	WebElement cart_btn;
-	
-	
 	
 	public Product_Page(WebDriver dr)
 	{
@@ -32,13 +28,17 @@ public class Product_Page {
 		PageFactory.initElements(dr, this);
 	}
 	
-	public static void Select_Product_Order() {
+	public  void Select_Product_Order() {
 		Select s = new Select(product_order);
 		s.selectByValue("za");
 	}
 	
-	public static void AddProduct_to_Cart() {
+	public  void AddProduct_to_Cart() {
 		product_name.click();
+	}
+	public int  Validate_product() {
+		String s =dr.findElement(By.xpath( "//a[@class='shopping_cart_link']/span")).getText();
+		return Integer.parseInt(s);
 	}
     
 

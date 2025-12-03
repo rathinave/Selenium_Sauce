@@ -1,1 +1,6 @@
+POM\ExtractLinks.class
+POM\Product_Page.class
+POM\Login_Page.class
+POM\Cart_Page.class
 Utilites\Common_Methods.class
+POM\Checkout_Page.class

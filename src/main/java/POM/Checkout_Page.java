@@ -15,7 +15,7 @@ public class Checkout_Page {
 	 }
 	 
 	 @FindBy(xpath = "//button[@id='checkout']")
-	 static 
+     static 
 	 WebElement chechout_btn;
 	 
 	 @FindBy(xpath = "//input[@id='first-name']")

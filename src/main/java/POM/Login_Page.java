@@ -29,19 +29,19 @@ public class Login_Page  {
 	static 
 	WebElement button;
 	
-	public static void Username(String name) {
+	public void Username(String name) {
 	     username.sendKeys(name);
 	}
 	 
-	public static void Password(String pass) {
+	public  void Password(String pass) {
 		password.sendKeys(pass);
 	}
 	
-	public static void Button() {
+	public  void Click_Login() {
 		button.click();
 	}
 	
-	public static boolean Validate_Login() {
+	public  boolean Validate_Login() {
 		return dr.findElement(By.xpath("//span[@class='title']")).isDisplayed();
 	}
 

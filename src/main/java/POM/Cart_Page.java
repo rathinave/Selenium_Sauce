@@ -19,11 +19,11 @@ public class Cart_Page {
 	static 
 	WebElement cart_btn;
 	
-    public static void Cart_btn_click() {
+    public  void Cart_btn_click() {
    	 cart_btn.click();
    }
     
-    public static boolean Validate_cart() {
+    public  boolean Validate_cart() {
     	return dr.findElement(By.xpath("//div[@class='cart_item_label']")).isDisplayed();
     }
    

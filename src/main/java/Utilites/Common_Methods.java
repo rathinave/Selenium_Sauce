@@ -27,26 +27,29 @@ public class Common_Methods {
 	}
 
 
-	public static WebDriver Launch()
+	public WebDriver driver()
     {
     	dr = new EdgeDriver();
     	dr.get(URL);
+    	dr.manage().window().maximize();
     	return dr;
     }
     
-	public static String read_data(int i,int j) throws IOException	{
+	public String read_data(int i,int j) throws IOException	{
 		
 		
-			String filename = "SwagLab";
+			String filename = "SwagLab.xlsx";
 			String sheetname = "Sheet1";
 			FileInputStream fis = new FileInputStream(filename);
-			XSSFWorkbook wb = new XSSFWorkbook(fis);
-			XSSFSheet sh = wb.getSheet(sheetname);
-			
-			XSSFRow r = sh.getRow(i);
-			XSSFCell c= r.getCell(j);
-			String s = c.getStringCellValue();
-			return s;	
+			try (XSSFWorkbook wb = new XSSFWorkbook(fis))
+			{
+				XSSFSheet sh = wb.getSheet(sheetname);
+				
+				XSSFRow r = sh.getRow(i);
+				XSSFCell c= r.getCell(j);
+				String s = c.getStringCellValue();
+				return s;
+			}	
 	}
 
 }

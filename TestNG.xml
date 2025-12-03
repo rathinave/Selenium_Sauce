@@ -1,0 +1,21 @@
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Sequential Suite" parallel="false" preserve-order="true">
+
+  <listeners>
+    <listener class-name="Test_Base.ExtentReportListener"/>
+  </listeners>
+
+  <test name="Test001">
+    <classes>
+      <class name="Test_Class.test001"/>
+    </classes>
+  </test>
+
+  <test name="Test002">
+    <classes>
+      <class name="Test_Class.test002"/>
+    </classes>
+  </test>
+
+</suite>
